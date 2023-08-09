@@ -1,0 +1,48 @@
+body{
+    background-image: url(./weathe3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.flex1{
+    display: flex;
+    justify-content: space-between;
+}
+#userCity{
+    font-size: xx-large;
+    font-weight: 700;
+    color: white;
+}
+#btn1{
+    border-radius: 30px;
+    /* display: flex; */
+    /* margin-right: 10px; */
+    /* justify-content: end; */
+}
+#img1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+#temp{
+    color: white;
+    font-size: 90px;
+    font-weight: 700;
+}
+#condition{
+    font-size: xx-large;
+    font-weight: 700;
+    color: white;
+    margin-left: 200px;
+}
+
+.flex2{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 50px; */
+    color: white;
+    margin-top: 0px;
+    font-weight: 900;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myCanvas {
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+
+    <script>
+        const yValues = [6.56, 8.87, 8.52, 9.60, 11.45, 19.67];
+        const xValues = [2016, 2017, 2018, 2019, 2020, 2021];
+        const barColors = ["red", "green", "blue", "orange", "brown", "pink"];
+
+        new Chart("myCanvas", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {display:false},
+                title: {
+      display: true,
+      text: "Component of Agriculture Import"
+    }
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getInfo()">Fetch into</button>
+    <button onclick="getInfo2()">Fetch into2</button>
+    <div id="load"></div>
+    <div id="show"></div>
+    <script>
+        setTimeout(()=>{
+            console.log("I am happy 1");
+        },5000)
+        console.log("I am happy 2");
+        console.log("I am happy 3");
+        console.log("I am happy 4");
+
+        let endpoint = "https://jsonplaceholder.typicode.com/users"
+        let endpoint2 = "https://api.github.com/users"
+
+        const getInfo = async()=>{
+            load.innerHTML=`
+            <h1>LOADING . . .</h1>
+            `
+            let response = await fetch(endpoint)
+            let convertedResponse = await response.json()
+            console.log(convertedResponse);
+            load.innerHTML=""
+            convertedResponse.map((user)=>{
+                show.innerHTML += `
+                <small>${user.id}</small>
+                <h2>${user.name}</h2>
+                <h2>${user.email}</h2>
+                <h2>${user.website}</h2>
+                `
+
+            })
+
+        }
+        const getInfo2=()=>{
+            fetch(endpoint2)
+            .then(response=>response.json())
+            .then((convertedResponse)=>{
+                console.log(convertedResponse);
+                convertedResponse.map((item)=>{
+                    show.innerHTML+=`
+                    <small>${item.id}</small>
+                    <div>${item.login}</div>
+                    <img src=${item.avatar_url} width="100">
+                    `
+                })
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickMe()">Click Me</button>
+    <script>
+        const clickMe =(a,b)=>{
+            return a+b;
+        }
+        let sum = clickMe(6,7)
+        console.log(sum);
+
+
+        let numbers = [1,2,3,4,5,6,7,8,9,10]
+        let newNumber = numbers.filter((number)=>{
+            return number > 5;
+        })
+        console.log(newNumber);
+
+        let evenNumbers = numbers.filter((number)=>{
+            return number%2==0
+        })
+        let evenNumbers2 = numbers.filter(number=>number%2==0)
+        console.log(evenNumbers);
+        console.log(evenNumbers2);
+
+        let oddNumbers = numbers.filter((number)=>{
+            return number%2!=0
+        })
+        let oddNumbers2 = numbers.filter(number=>number%2!=0)
+        console.log(oddNumbers);
+        console.log(oddNumbers2);
+
+
+        let namesArray =["Paul", "Peter", "Mark", "Salaudeen", "Sola"]
+        let newName = namesArray.find((user)=>{
+            return user.startsWith("P")
+        })
+        let newName2 = namesArray.find((name)=>{
+            return name.endsWith("n")
+        })
+        console.log(newName);
+        console.log(newName2);
+
+    </script>
+</body>
+</html>

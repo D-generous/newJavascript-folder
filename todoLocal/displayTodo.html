@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+      defer type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+</head>
+<body onload="showTodo()">
+    <h1 class="text-center text-decoration-underline text-primary mb-5">All Todos</h1>
+    <div class="container-fluid mx-auto">
+        <div class="row" id="displayTodo">
+    
+        </div>
+
+    </div>
+
+    <script>
+        var retrievedTodos =[]
+
+        //***** another way of setting items into localStorage
+        // localStorage.numbers = JSON.stringify([23,"sqi", true])
+
+
+        function showTodo(){
+            if (localStorage.todos) {
+                retrievedTodos = JSON.parse(localStorage.getItem("todos"))
+                console.log(retrievedTodos);
+                for (let index = 0; index < retrievedTodos.length; index++) {
+                    console.log(`${retrievedTodos[index].todo}`);
+                    console.log(`${retrievedTodos[index].details}`);
+                    displayTodo.innerHTML +=
+                    `
+                        <div class="col-6 g-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${retrievedTodos[index].todo}</h5>
+                                    <p class="card-text">${retrievedTodos[index].details}</p>
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                    `
+                    
+                }
+            }else{
+                retrievedTodos =[]
+            }
+        }
+    </script>
+    
+</body>
+</html>

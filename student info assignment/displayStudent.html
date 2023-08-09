@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script refer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body onload="showStudents()">
+    <h1 class="text-center text-decoration-underline text-primary mb-5">All Students</h1>
+    <div class="container-fluid my-4 shadow-sm col-lg-7 col-md-7 col-11">
+        <h1 class="text-center alert alert-danger my-2" id="noStudentRegistered">No student has registered</h1>
+        <table id="studentTable" class="table table-striped table-bordered"></table>
+
+    </div>
+
+    <script>
+        let retrievedStudent=[]
+        const showStudents=()=>{
+            retrievedStudent = JSON.parse(localStorage.getItem("students"))
+            console.log(retrievedStudent);
+            if (localStorage.students) {
+                document.getElementById("noStudentRegistered").style.display="none"
+                studentTable.innerHTML=`
+                <tr>
+                    <th>S/N</th>
+                    <th>Student Name</th>
+                    <th>Student Matric</th>
+                    <th>Student Score</th>
+                    <th>Student Grade</th>
+                </tr>
+                `
+                retrievedStudent.map((myStudents,index)=>{
+                    studentTable.innerHTML +=`
+                    <tr>
+                        <td>${index+1}</td>
+                        <td>${myStudents.myName}</td>
+                        <td>${myStudents.myMatric}</td>
+                        <td>${myStudents.myScore}</td>
+                    </tr>
+                    `
+                })
+                if (myStudents.myScore<=40) {
+                    
+                    
+                }
+                
+            }else{
+                document.getElementById("noStudentRegistered").style.display="block"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

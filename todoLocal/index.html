@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  defer type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+></script>
+</head>
+<body>
+    <div class="container-fluid mx-auto col-8">
+        <h1 class="text-center text-decoration-underline text-primary">Todo Pro</h1>
+        <div class="my-2 py-2 alert alert-danger text-center" style="display: none;" id="showError">Please fill in appropriately</div>
+        <div class="form-outline my-3">
+            <input type="text" class="form-control form-control-lg" id="todoName">
+            <label for="todoName" class="form-label">Enter your todo</label>
+        </div>
+        <div class="form-outline my-3">
+            <input type="text" class="form-control form-control-lg" id="todoDetails">
+            <label for="todoDetails" class="form-label">Enter your todo details</label>
+        </div>
+        <div class="my-3">
+            <button class="btn btn-primary w-100" onclick="addTodo()">Add</button>
+        </div>
+    </div>
+    
+    <script>
+        var allTodo =[]
+        function addTodo(){
+            var totoObj={
+                todo:todoName.value,
+                details: todoDetails.value,
+                error(){
+                    document.getElementById("showError").style.display="block"
+                },
+                dismissError(){
+                    document.getElementById("showError").style.display="none"
+                }
+            }
+            if (todoName.value!=""&& todoDetails.value!="") {
+                allTodo.push(totoObj)
+                console.log(allTodo);
+                todoName.value=""
+                todoDetails.value=""
+                totoObj.dismissError()
+                localStorage.setItem("todos", JSON.stringify(allTodo))
+                window.location.href="displayTodo.html"
+
+                
+            }else{
+                todoObj.error()
+            }
+        }
+    </script>
+</body>
+</html>

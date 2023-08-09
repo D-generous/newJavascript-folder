@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <input type="text" id="inp">
+    <button onclick="check()">Check</button>
+    <script>
+        // let studs =["Emeka","Gbola","Tunde"]
+        let studs = new Array("Emeka","Gbola","Tunde")
+        console.log(studs);
+
+        class Student {
+            constructor (named, color, id){
+                this.name = named
+                this.color = color
+                this.id = id
+            }
+            details(){
+                console.log(`The name of the student is ${this.name} and thir color is ${this.color} while their id is ${this.id}`);
+                show.innerHTML +=`The name of the student is ${this.name} and thir color is ${this.color} while their id is ${this.id}`
+            }
+        }
+
+        let hik = "Hikmah"
+        let studentOne = new Student(hik, "Chocolate", 1)
+        let studentTwo = new Student("Idris", "Milo", 2)
+        let studentThree = new Student("Miracle", "Custard", 3)
+        console.log(studentOne,studentTwo);
+
+        studentOne.details()
+        studentTwo.details()
+        studentThree.details()
+
+        const check=()=>{
+            if (inp.value==studentOne.name) {
+                studentOne.details()
+                
+            }else if (inp.value==studentTwo) {
+                studentTwo.details()
+                
+            }else if (inp.value==studentThree) {
+                studentThree.details()
+                
+            }
+        }
+    </script>
+</body>
+</html>

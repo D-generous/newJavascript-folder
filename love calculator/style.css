@@ -1,0 +1,58 @@
+@keyframes color {
+    0% {
+        color: green;
+    }
+
+    50% {
+        color: yellow;
+    }
+    50% {
+        color: pink;
+    }
+
+    100% {
+        color: blue;
+    }
+}
+body{
+    background-image: url('./backgroung1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#btn{
+    font-size: x-large ;
+    animation-name: color;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    
+}
+#dispParticipant{
+    font-size: xx-large;
+    color: yellow;
+}
+#dispFigure{
+    font-size: xx-large;
+
+}
+#dispFigure{
+    animation-name: color;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+
+}
+#advicePlayer{
+    font-size: xx-large;
+
+}
+/* #flex-container{
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+    margin: 100pt ;
+} */
+/* #inp1,
+#inp2{
+    width: 600px;
+    padding-left: 20%;
+} */

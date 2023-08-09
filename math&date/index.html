@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date().toLocaleDateString()
+        var time = new Date().toLocaleTimeString()
+        console.log(date);
+        document.write(date)
+        // document.write(time)
+
+
+
+        // MAth Function
+        // Math.floor - rounds down
+        // Math.ceil - rounds up
+        // Math.round - follow the normal mathematical procedures
+        var fig = Math.random()*1000000000
+        var accNumber = Math.round(Math.random()*10000000000)
+        var accNumber = "01"+ Math.round(Math.random()*100000000)
+        localStorage.accNumber = JSON.stringify(accNumber)
+        console.log(accNumber);
+        console.log(fig);
+    </script>
+</body>
+</html>

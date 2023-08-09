@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script refer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <div class="container-fluid my-4 mx-auto col-8">
+        <div class="col-6">
+            <div class="form-floating my-2">
+                <input type="text" class="form-control" placeholder="Player Name" id="playerName">
+                <label for="playerName" class="ms-5 ps-5">Player Name</label>
+            </div>
+            <div class="form-floating my-2">
+                <input type="text" class="form-control" placeholder="Player Name" id="playerName">
+                <label for="playerName" class="ms-5 ps-5">Player Name</label>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="d-flex justify-content-center">
+        <input type="text" placeholder="Player Name">
+        <input type="text" placeholder="Player Name">
+    </div> -->
+
+    <div class="d-flex my-5 py-5">
+        <input type="text" class="p-1 ps-5 mx-3 flex-fill form-control" placeholder="Player Name" id="inp1">
+        <input type="text" class="p-1 ps-5 mx-3 flex-fill form-control" placeholder="Lover Name" id="inp2">
+      </div>
+
+
+
+
+    <div id="cont">
+        <!-- <div id="flex-container">
+            <input type="text" placeholder="Player Name" id="inp1">
+            <input type="text" placeholder="Lover Name" id="inp2">
+        </div> -->
+        
+        <div class="col-1 my-4 mx-auto w-25">
+            <button class="btn btn-dark w-100" onclick="myCalc()" id="btn">Calculate</button>
+
+        </div>
+
+        
+    </div>
+    <div class="container-fluid bg-secondary w-100 ms-3 me-3 col-8">
+        <div class="text-center" id="dispParticipant"></div>
+        <div class="text-center" id="dispFigure"></div>
+        <div class="text-center md-5" id="advicePlayer"></div>
+
+    </div>
+    <script>
+        function myCalc(){
+
+            let playerName = document.getElementById("inp1").value
+            let loverName = document.getElementById("inp2").value
+            var myNum = Math.round(Math.random()*100) 
+            var myLove = Math.round(Math.random()) 
+            let loveCalculate = Number(`${myNum+myLove}`)
+            inp1.value=""
+            inp2.value=""
+            console.log(myNum+myLove);
+            if (playerName!="" && loverName!="") {
+                dispParticipant.innerHTML =`You and ${loverName} match` 
+                dispFigure.innerHTML = `${loveCalculate}%`
+                if (loveCalculate<=40) {
+                    advicePlayer.innerHTML= `Becareful, ${loverName} can break your heart`  
+                }else if (loveCalculate<=80) {
+                    advicePlayer.innerHTML= `${playerName}!! Think twice...${loverName} might serve you breakfast`  
+                    
+                }else if (loveCalculate<=100) {
+                    advicePlayer.innerHTML= `You'll not want to loose ${loverName}`  
+                    
+                }
+            }else{
+                dispParticipant.innerHTML =`No! You must input players name`
+                dispFigure.innerHTML="" 
+                advicePlayer.innerHTML=""
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
